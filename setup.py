@@ -1,11 +1,11 @@
 from distutils.core import setup
 
-setup(name='amiwrapper',
+setup(name='pycallbridge',
       version='0.1',
-      description='Description for amiwrapper',
+      description='Description for pycallbridge',
       author='',
       license='MIT',
-      py_modules=['amiwrapper'],
+      py_modules=['pycallbridge'],
       classifiers=[
           'Development Status :: 5 - Production/Stable',
           'Environment :: Console',
