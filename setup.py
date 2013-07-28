@@ -1,9 +1,9 @@
 from distutils.core import setup
 
-setup(name='pycallbridge',
+setup(name='amiwrapper',
       version='0.1',
-      description='Description for pycallbridge',
-      author='',
+      description='Base class to be used for clientAsterisk/AMI applications.',
+      author='Marcos Lopez',
       license='MIT',
       py_modules=['pycallbridge'],
       classifiers=[
