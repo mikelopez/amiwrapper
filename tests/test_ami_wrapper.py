@@ -3,7 +3,6 @@ from amiwrapper import AMIWrapper
 
 class TestAMIWrapper(TestAMIBase):
     """ Test the AMIWrapper class """
-    def test_
 
     def test_send_command(self):
         """ Test sending a command to AMI using wrapper.
