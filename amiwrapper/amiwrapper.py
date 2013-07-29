@@ -23,15 +23,16 @@ class AMIWrapper(object):
     allowed_keys = ['user', 'pwd', 'host', 'command_txt', 'response']
     def __init__(self, **kwargs):
         """ Set the credentials or stop the reactor """
+        for k, v in kwargs.items():
+            if k in self.allowed_keys:
+                setattr(self, k, v)
+    
         if not self.host or not self.user or not self.pwd:
             raise Exception("No credentials found")
             self.__stop_reactor()
             sys.exit()
 
-        for k, v in kwargs.items():
-            if k in self.allowed_keys:
-                setattr(self, k, v)
-    
+        
     def stop_reactor(self):
         """ Attempt to stop the reactor so the
         application can terminate.
