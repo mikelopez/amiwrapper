@@ -5,7 +5,7 @@ setup(name='amiwrapper',
       description='Base class to be used for clientAsterisk/AMI applications.',
       author='Marcos Lopez',
       license='MIT',
-      py_modules=['pycallbridge'],
+      py_modules=['amiwrapper'],
       classifiers=[
           'Development Status :: 5 - Production/Stable',
           'Environment :: Console',
