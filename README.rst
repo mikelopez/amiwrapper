@@ -1,7 +1,7 @@
 Readme for amiwrapper
 ------------------------------
 
-``from pycallbridge import *``
+``from amiwrapper import *``
 
 
 Requirements
