@@ -18,9 +18,16 @@ class AMIWrapper(object):
     user = user
     pwd = pwd
     command_txt = None
-    response = None
+    extension = None
+    source = None
+    destination = None
+    channel = None
+    context = None
 
-    allowed_keys = ['user', 'pwd', 'host', 'command_txt', 'response']
+    response = None
+    allowed_keys = ['user', 'pwd', 'host', 'command_txt', 'response', \
+                'source', 'extension', 'destination', 'channel', 'context']
+
     def __init__(self, **kwargs):
         """ Set the credentials or stop the reactor """
         for k, v in kwargs.items():
@@ -32,7 +39,6 @@ class AMIWrapper(object):
             self.__stop_reactor()
             sys.exit()
 
-        
     def stop_reactor(self):
         """ Attempt to stop the reactor so the
         application can terminate.
