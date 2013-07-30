@@ -17,22 +17,13 @@ class AMIWrapper(object):
     host = host
     user = user
     pwd = pwd
-    command_txt = None
-    extension = None
-    source = None
-    destination = None
-    channel = None
-    context = None
 
     response = None
-    allowed_keys = ['user', 'pwd', 'host', 'command_txt', 'response', \
-                'source', 'extension', 'destination', 'channel', 'context']
 
     def __init__(self, **kwargs):
         """ Set the credentials or stop the reactor """
         for k, v in kwargs.items():
-            if k in self.allowed_keys:
-                setattr(self, k, v)
+            setattr(self, k, v)
     
         if not self.host or not self.user or not self.pwd:
             raise Exception("No credentials found")
