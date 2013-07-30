@@ -59,5 +59,9 @@ class AMIWrapper(object):
         """ Get the session from self.session safely """
         return getattr(self, "session", None)
 
+    def get_response(self):
+        """ Return the response """
+        return getattr(self, "response", None)
+
 
 
