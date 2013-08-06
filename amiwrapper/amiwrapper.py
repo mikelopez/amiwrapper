@@ -4,9 +4,9 @@ from twisted.internet import reactor
 import sys, logging
 try:
     import settings
-    user = getattr(settings, "AMI_USER")
-    pwd = getattr(settings, "AMI_PASS")
-    host = getattr(settings, "PBX")
+    user = getattr(settings, "AMI_USER", None)
+    pwd = getattr(settings, "AMI_PASS", None)
+    host = getattr(settings, "PBX", None)
 except ImportError:
     host, user, pwd = "", "", ""
 
