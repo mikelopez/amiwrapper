@@ -18,6 +18,7 @@ class AMIWrapper(object):
     user = user
     pwd = pwd
 
+    debug = False
     response = None
 
     def __init__(self, **kwargs):
@@ -28,6 +29,18 @@ class AMIWrapper(object):
         if not self.host or not self.user or not self.pwd:
             self.__stop_reactor()
             raise Exception("No credentials found")
+
+    def warning_log(self, data):
+        if self.debug:
+            termprint(w, data)
+
+    def error_log(self, data):
+        if self.debug:
+            termprint(w, data)
+
+    def info_log(self, data):
+        if self.debug:
+            termprint(i, data)
 
     def stop_reactor(self):
         """ Attempt to stop the reactor so the
