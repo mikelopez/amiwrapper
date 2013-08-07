@@ -48,12 +48,12 @@ class AMIWrapper(object):
         """
         try:
             reactor.stop()
-        except:
-            termprint(e, "Failed to stop reactor")
-            pass
+        except Exception, e:
+            self.error_log("amiwrapper - Failed to stop reactor %s" % e)
 
     def run_reactor(self, method):
         """ Start and run the reactor """
+        self.warning_log(dir(reactor))
         reactor.callWhenRunning(method)
         reactor.run()
 
