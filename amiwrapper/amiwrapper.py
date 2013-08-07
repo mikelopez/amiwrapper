@@ -26,9 +26,8 @@ class AMIWrapper(object):
             setattr(self, k, v)
     
         if not self.host or not self.user or not self.pwd:
-            raise Exception("No credentials found")
             self.__stop_reactor()
-            sys.exit()
+            raise Exception("No credentials found")
 
     def stop_reactor(self):
         """ Attempt to stop the reactor so the
@@ -49,7 +48,6 @@ class AMIWrapper(object):
         """ Print any errors and exit """
         termprint(e, msg)
         self.stop_reactor()
-        sys.exit()
 
     def set_session(self):
         self.session = manager.AMIFactory(self.user, self.pwd)
