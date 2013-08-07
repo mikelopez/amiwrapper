@@ -53,7 +53,8 @@ class AMIWrapper(object):
 
     def run_reactor(self, method):
         """ Start and run the reactor """
-        self.warning_log(dir(reactor))
+        self.warning_log("Reactor running: %s" % reactor.running)
+        self.info_log(dir(reactor))
         reactor.callWhenRunning(method)
         reactor.run()
 
