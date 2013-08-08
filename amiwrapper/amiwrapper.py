@@ -53,7 +53,7 @@ class AMIWrapper(object):
 
     def run_reactor(self, method):
         """ Start and run the reactor """
-        self.warning_log("Reactor running: %s" % reactor.running)
+        self.warning_log("amiwrapper - Reactor running: %s" % reactor.running)
         self.info_log(dir(reactor))
         reactor.callWhenRunning(method)
         reactor.run()
@@ -62,6 +62,7 @@ class AMIWrapper(object):
         """ Print any errors and exit """
         termprint(e, msg)
         self.stop_reactor()
+        return msg
 
     def set_session(self):
         self.session = manager.AMIFactory(self.user, self.pwd)
